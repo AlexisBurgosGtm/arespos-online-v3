@@ -1,0 +1,13 @@
+{
+  "name": "AresPOS-Online",
+  "description": "sales for business",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexis Burgos",
+      "email": "ralexmailreu@gmail.com"
+    }
+  ],
+  "require": {}
+}
