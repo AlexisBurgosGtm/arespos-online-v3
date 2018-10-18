@@ -20,9 +20,15 @@ const staticAssets = [
   './css/colors/blue.css',
   './css/img/icons.png',
   './css/img/icons.svg',
+  './images/logoares.png',
   './images/colors/blue/bg.jpg',
   './images/colors/blue/header.jpg',
   './fallback.json',
+  './images/icons/white/menu.png',
+  './images/icons/white/home.png',
+  './images/icons/white/briefcase.png',
+  './images/icons/white/toogle.png',
+  './images/icons/white/responsive.png',
   './sw.js'
 ];
 
