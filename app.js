@@ -1,7 +1,6 @@
 const apiKey = '6f4fa5447bb24a2687edecc4c1df43b4';
 const defaultSource = 'the-washington-post';
 //const sourceSelector = document.querySelector('#sources');
-const newsArticles = document.querySelector('tblPrecios');
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () =>
@@ -33,7 +32,7 @@ async function updateNewsSources() {
 document.getElementById('btnPrecios').addEventListener('click', updateNews());
 
 async function updateNews(source = defaultSource) {
-  
+  let newsArticles = document.querySelector('tblPrecios');
   newsArticles.innerHTML = '';
   const response = await fetch(`./data/productos.json`);
   const json = await response.json();
