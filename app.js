@@ -14,7 +14,7 @@ window.addEventListener('load', e => {
   //sourceSelector.addEventListener('change', evt => updateNews(evt.target.value));
   //updateNewsSources().then(() => {
     //sourceSelector.value = defaultSource;
-    updateNews();
+    //updateNews();
   //});
 });
 
@@ -30,7 +30,7 @@ async function updateNewsSources() {
 }
 
 
-
+document.getElementById('btnPrecios').addEventListener('click', updateNews());
 
 async function updateNews(source = defaultSource) {
   
