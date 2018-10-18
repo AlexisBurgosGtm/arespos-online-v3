@@ -32,7 +32,7 @@ async function updateNewsSources() {
 document.getElementById('btnPrecios').addEventListener('click', updateNews());
 
 async function updateNews(source = defaultSource) {
-  let newsArticles = document.querySelector('tblPrecios');
+  let newsArticles = document.getElementById('tblPrecios');
   newsArticles.innerHTML = '';
   const response = await fetch(`./data/productos.json`);
   const json = await response.json();
