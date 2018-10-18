@@ -66,9 +66,7 @@
 
 <script>
 
-document.getElementById('btnPrecios').addEventListener('click', updateNews());
-
-async function updateNews(source = defaultSource) {
+let update = async function () {
   let newsArticles = document.getElementById('tblPrecios');
   newsArticles.innerHTML = '';
   const response = await fetch(`./data/productos.json`);
