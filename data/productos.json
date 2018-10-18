@@ -1,4 +1,4 @@
-const listaproductos =[
+{"Articles":[
     {
       "CODPROD": "7401000705217",
       "DESPROD": "FRIJOL DEL MONTE 5.5 OZ",
@@ -14911,3 +14911,4 @@ const listaproductos =[
       "HABILITADO": "SI"
     }
   ]
+}

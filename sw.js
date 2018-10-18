@@ -29,6 +29,7 @@ const staticAssets = [
   './images/icons/white/briefcase.png',
   './images/icons/white/toogle.png',
   './images/icons/white/responsive.png',
+  './data/productos.json',
   './sw.js'
 ];
 

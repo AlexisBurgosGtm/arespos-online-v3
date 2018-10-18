@@ -1,7 +1,7 @@
 const apiKey = '6f4fa5447bb24a2687edecc4c1df43b4';
 const defaultSource = 'the-washington-post';
 //const sourceSelector = document.querySelector('#sources');
-const newsArticles = document.querySelector('main');
+const newsArticles = document.querySelector('tblPrecios');
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () =>
@@ -14,7 +14,7 @@ window.addEventListener('load', e => {
   //sourceSelector.addEventListener('change', evt => updateNews(evt.target.value));
   //updateNewsSources().then(() => {
     //sourceSelector.value = defaultSource;
-    //updateNews();
+    updateNews();
   //});
 });
 
@@ -29,22 +29,23 @@ async function updateNewsSources() {
       .join('\n');
 }
 
+
+
+
 async function updateNews(source = defaultSource) {
+  
   newsArticles.innerHTML = '';
-  const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&sortBy=top&apiKey=${apiKey}`);
+  const response = await fetch(`./data/productos.json`);
   const json = await response.json();
   newsArticles.innerHTML =
-    json.articles.map(createArticle).join('\n');
+    json.Articles.map(createArticle).join('\n');
+    //await caches.match('./fallback.json');
 }
 
 function createArticle(article) {
-  return `s
-    <div class="article">
-      <a href="${article.url}">
-        <h2>${article.title}</h2>
-        <img src="${article.urlToImage}" alt="${article.title}">
-        <p>${article.description}</p>
-      </a>
-    </div>
-  `;
+  return `<li class="table_row">
+            <div class="table_section">${article.DESPROD}</div>
+            <div class="table_section_small">${article.CODMEDIDA}</div> 
+            <div class="table_section" align="center">${article.PRECIO}</div> 
+          </li>`;
 }
