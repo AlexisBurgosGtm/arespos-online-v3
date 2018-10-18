@@ -63,3 +63,27 @@
     </div>
   </div>
 </div>
+
+<script>
+
+document.getElementById('btnPrecios').addEventListener('click', updateNews());
+
+async function updateNews(source = defaultSource) {
+  let newsArticles = document.getElementById('tblPrecios');
+  newsArticles.innerHTML = '';
+  const response = await fetch(`./data/productos.json`);
+  const json = await response.json();
+  newsArticles.innerHTML =
+    json.Articles.map(createArticle).join('\n');
+    //await caches.match('./fallback.json');
+}
+
+function createArticle(article) {
+  return `<li class="table_row">
+            <div class="table_section">${article.DESPROD}</div>
+            <div class="table_section_small">${article.CODMEDIDA}</div> 
+            <div class="table_section" align="center">${article.PRECIO}</div> 
+          </li>`;
+}
+
+</script>
