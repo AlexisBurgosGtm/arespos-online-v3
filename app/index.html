@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="css/framework7.css">
 <link rel="stylesheet" href="style.css">
 <!--<link rel="stylesheet" href="css/colors/magenta.css">-->
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
 <link rel="stylesheet" href="css/colors/blue.css">
 <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
 <link type="text/css" rel="stylesheet" href="css/animations.css" />
@@ -33,13 +36,13 @@
                   <div class="user_details">
                    <p><span>AresPOS</span></p>
                   </div>  
-                <!--  
+                
                   <div class="user_social">
                   <a href="#" data-popup=".popup-social" class="open-popup">
                     <img src="images/icons/white/twitter.png" alt="" title="" />
                   </a>              
                 </div>
-              -->
+              
                 </div>
 
                   <nav class="user-nav">
@@ -48,6 +51,7 @@
                       <li><a href="ventas.html" class="close-panel"><img src="images/icons/white/briefcase.png" alt="" title="" /><span>Ventas</span></a></li>
                       <li><a href="precios.html" class="close-panel"><img src="images/icons/white/toogle.png" alt="" title="" id="btnPrecios" /><span>Precios</span></a></li>
                       <li><a href="sync.html" class="close-panel"><img src="images/icons/white/responsive.png" alt="" title="" /><span>Sincronizar</span><strong class="blue">6</strong></a></li>
+                      <li><a href="config.html" class="close-panel"><img src="images/icons/white/settings.png" alt="" title="" /><span>Config</span></a></li>
                       <!--<li><a href="index.html" class="close-panel"><img src="images/icons/white/lock.png" alt="" title="" /><span>Logout</span></a></li>
                       <li><a href="features.html" class="close-panel"><img src="images/icons/white/message.png" alt="" title="" /><span>Precios</span><strong class="green">12</strong></a></li>
                       -->
@@ -56,34 +60,120 @@
           </div>
     </div>
 
-    <div class="panel panel-right panel-cover"> 
-      
-        <h2>Search</h2>
-        <div class="search_form">
-        <form id="SearchForm" method="post">
-        <input type="text" name="keyword" value="" class="search_input" placeholder="keyword" />
-        <input type="image" name="submit" class="search_submit" id="submit" src="images/icons/white/search.png" />
-        </form>
+    <!-- PANEL DERECHO -->
+    <div class="panel panel-right panel-cover" style="background-color:white;color:black"> 
+        <div class="card-header">
+            Detalle de la Venta
         </div>
-        <div class="clear"></div>
-        <h3>POPULAR POSTS</h3>
-        <ul class="popular_posts">
-        
-        <li>
-          <a href="blog-single.html" class="close-panel"><img src="images/photos/photo5.jpg" alt="" title="" /></a>
-          <span><a href="blog-single.html" class="close-panel">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</a></span>        
-        </li>
-        </ul>
+        <div class="card-header">
+            Total : <b id="txtTotalVenta">Q 350.00</b>
+        </div>
+        <div class="card-footer">
+            <a href="ventas.html" class="btn btn-default btn-rounded">Cancelar</a>
+            <button class="btn btn-success" onclick="">Guardar</button>
+        </div>
+  
+        <div class="card-body">
+          <div class="table table-responsive" id="contenedorPedido">
+            <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <td>Producto</td>
+                  <td>Medida</td>
+                  <td>Cantidad</td>
+                  <td>Precio</td>
+                  <td>Importe</td>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>Pantene Rizos sachet</td>
+                    <td>UNIDAD</td>
+                    <td>1</td>
+                    <td>Q19.00</td>
+                    <td>Q19.00</td>
+                    <td><button class="btn btn-sm btn-round">x</button></td>
+                  </tr>
+                  <tr>
+                      <td>Ariel Azul 150grs</td>
+                      <td>CAJA</td>
+                      <td>2</td>
+                      <td>Q100.40</td>
+                      <td>Q200.80</td>
+                      <td><button class="btn btn-sm btn-round">x</button></td>
+                    </tr>
+                    
+                  <tr>
+                    <td>H&S rosado sachet</td>
+                      <td>UNIDAD</td>
+                      <td>1</td>
+                      <td>Q19.00</td>
+                      <td>Q19.00</td>
+                      <td><button class="btn btn-sm btn-round">x</button></td>
+                    </tr>
+                    <tr>
+                        <td>Pantene Rizos sachet</td>
+                        <td>UNIDAD</td>
+                        <td>1</td>
+                        <td>Q19.00</td>
+                        <td>Q19.00</td>
+                        <td><button class="btn btn-sm btn-round">x</button></td>
+                      </tr>
+                      <tr>
+                          <td>Ariel Azul 150grs</td>
+                          <td>CAJA</td>
+                          <td>2</td>
+                          <td>Q100.40</td>
+                          <td>Q200.80</td>
+                          <td><button class="btn btn-sm btn-round">x</button></td>
+                        </tr>
+                        
+                      <tr>
+                        <td>H&S rosado sachet</td>
+                          <td>UNIDAD</td>
+                          <td>1</td>
+                          <td>Q19.00</td>
+                          <td>Q19.00</td>
+                          <td><button class="btn btn-sm btn-round">x</button></td>
+                        </tr>
+                        <tr>
+                            <td>Pantene Rizos sachet</td>
+                            <td>UNIDAD</td>
+                            <td>1</td>
+                            <td>Q19.00</td>
+                            <td>Q19.00</td>
+                            <td><button class="btn btn-sm btn-round">x</button></td>
+                          </tr>
+                          <tr>
+                              <td>Ariel Azul 150grs</td>
+                              <td>CAJA</td>
+                              <td>2</td>
+                              <td>Q100.40</td>
+                              <td>Q200.80</td>
+                              <td><button class="btn btn-sm btn-round">x</button></td>
+                            </tr>
+                            
+                          <tr>
+                            <td>H&S rosado sachet</td>
+                              <td>UNIDAD</td>
+                              <td>1</td>
+                              <td>Q19.00</td>
+                              <td>Q19.00</td>
+                              <td><button class="btn btn-sm btn-round">x</button></td>
+                            </tr>                                            
+                </tbody>
+
+            </table>
+
+          </div>
+        </div>
     </div>
 
+      
     <div class="views">
 
       <div class="view view-main">
-
-          <ul class="responsive_table" id="tblPrecios">
-            
-          </ul> 
-
         <div class="pages  toolbar-through">
 
           <div data-page="index" class="page homepage">
@@ -104,7 +194,7 @@
               -->
               <li class="menuicon"><a href="#" data-panel="left" class="open-panel"><img src="images/icons/white/menu.png" alt="" title="" /></a></li>
               <!--
-              <li><a href="blog.html"><img src="images/icons/white/blog.png" alt="" title="" /></a></li>
+              <li><a href="blog.hstml"><img src="images/icons/white/blog.png" alt="" title="" /></a></li>
               <li><a href="contact.html"><img src="images/icons/white/contact.png" alt="" title="" /></a></li>
               -->
               </ul>
@@ -117,7 +207,7 @@
     <div class="popup popup-login">
     <div class="content-block-login">
       <h4>LOGIN</h4>
-      <div class="form_logo"><img src="images/logo.png" alt="" title="" /></div>
+      <div class="form_logo"><img src="images/logoares.png" alt="" title="" /></div>
             <div class="loginform">
             <form id="LoginForm" method="post">
             <input type="text" name="Username" value="" class="form_input required" placeholder="username" />
@@ -132,59 +222,16 @@
       <div class="close_loginpopup_button"><a href="#" class="close-popup"><img src="images/icons/white/menu_close.png" alt="" title="" /></a></div>
     </div>
     </div>
-    
-    <!-- Register Popup -->
-    <div class="popup popup-signup">
-    <div class="content-block-login">
-      <h4>REGISTER</h4>
-      <div class="form_logo"><img src="images/logo.png" alt="" title="" /></div>
-            <div class="loginform">
-            <form id="RegisterForm" method="post">
-            <input type="text" name="Username" value="" class="form_input required" placeholder="username" />
-            <input type="text" name="Email" value="" class="form_input required" placeholder="email" />
-            <input type="password" name="Password" value="" class="form_input required" placeholder="password" />
-            <input type="submit" name="submit" class="form_submit" id="submit" value="SIGN UP" />
-            </form>
-            <div class="signup_social">
-            <a href="http://www.facebook.com/" class="signup_facebook external">FACEBOOK</a>
-            <a href="http://www.twitter.com/" class="signup_twitter external">TWITTER</a>            
-            </div>
-            </div>
-      <div class="close_loginpopup_button"><a href="#" class="close-popup"><img src="images/icons/white/menu_close.png" alt="" title="" /></a></div>
-    </div>
-    </div>
-    
-    <!-- Login Popup -->
-    <div class="popup popup-forgot">
-    <div class="content-block-login">
-      <h4>FORGOT PASSWORD</h4>
-      <div class="form_logo"><img src="images/logo.png" alt="" title="" /></div>
-            <div class="loginform">
-            <form id="ForgotForm" method="post">
-            <input type="text" name="Email" value="" class="form_input required" placeholder="email" />
-            <input type="submit" name="submit" class="form_submit" id="submit" value="RESEND PASSWORD" />
-            </form>
-            <div class="signup_bottom">
-            <p>Check your email and follow the instructions to reset your password.</p>
-            </div>
-            </div>
-      <div class="close_loginpopup_button"><a href="#" class="close-popup"><img src="images/icons/white/menu_close.png" alt="" title="" /></a></div>
-    </div>
-    </div>
-    
-    
+        
     <!-- Social Popup -->
     <div class="popup popup-social">
     <div class="content-block">
-      <h4>Follow Us</h4>
-      <p>Social icons solution that allows you share and increase your social popularity.</p>
+      <h4>Síguenos</h4>
+      <p>Disfruta del mejor contenido para tu negocio.</p>
       <ul class="social_share">
       <li><a href="http://twitter.com/" class="external"><img src="images/icons/white/twitter.png" alt="" title="" /></a></li>
       <li><a href="http://www.facebook.com/" class="external"><img src="images/icons/white/facebook.png" alt="" title="" /></a></li>
-      <li><a href="http://plus.google.com" class="external"><img src="images/icons/white/googleplus.png" alt="" title="" /></a></li>
-      <li><a href="http://www.dribbble.com/" class="external"><img src="images/icons/white/dribbble.png" alt="" title="" /></a></li>
-      <li><a href="http://www.linkedin.com/" class="external"><img src="images/icons/white/linkedin.png" alt="" title="" /></a></li>
-      <li><a href="http://www.pinterest.com/" class="external"><img src="images/icons/white/pinterest.png" alt="" title="" /></a></li>
+      <li><a href="http://whatsapp.com" class="external"><img src="images/icons/white/googleplus.png" alt="" title="" /></a></li>
       </ul>
       <div class="close_popup_button"><a href="#" class="close-popup"><img src="images/icons/white/menu_close.png" alt="" title="" /></a></div>
     </div>
@@ -197,6 +244,15 @@
 <script type="text/javascript" src="js/jquery.swipebox.js"></script>
 
 <script src="app.js"></script>
+<script src="js/funciones.js"></script>
 
-  </body>
+<script>
+$(document).on("keyup","#search",()=>{
+    crearBusquedaTabla();
+})
+
+
+</script>
+
+</body>
 </html>

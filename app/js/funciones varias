@@ -1,0 +1,23 @@
+     function crearBuscador(){
+            
+            var search = document.getElementById("search"),
+            food = document.getElementsByClassName("table_row"),
+            
+            forEach = Array.prototype.forEach;
+        
+            search.addEventListener("keyup", function(e){
+            var choice = this.value;
+                        
+            forEach.call(food, function(f){
+                //if (f.innerHTML.toLowerCase().search(choice.toLowerCase()) == -1)
+                if (f.innerHTML.toLowerCase().search(choice.toLowerCase()) == -1)
+                    f.parentNode.style.display = "none";
+                    
+                    //f.parentNode.style.color = '#00000';
+                else
+                    f.parentNode.style.display = "block";        
+                    //f.parentNode.style.color = '#00011';
+            });
+        }, false);
+
+        }

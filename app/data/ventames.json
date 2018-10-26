@@ -1,4 +1,5 @@
-const listaventas =[
+{
+  "VentasMes": [
     {
       "DIA": 1,
       "TOTALCOSTO": "Q1513.12",
@@ -52,5 +53,12 @@ const listaventas =[
       "TOTALCOSTO": "Q814.22",
       "TOTALPRECIO": "Q911.50",
       "CONCRE": "CON"
+    },
+    {
+      "DIA": 21,
+      "TOTALCOSTO": "Q7.50",
+      "TOTALPRECIO": "Q8.00",
+      "CONCRE": "CON"
     }
   ]
+}

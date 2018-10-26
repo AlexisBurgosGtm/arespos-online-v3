@@ -1,6 +1,6 @@
-async function fcn_hablar(texto) {
+function fcn_hablar(texto) {
     var utterance = new SpeechSynthesisUtterance(texto);
-    return await window.speechSynthesis.speak(utterance); 
+    return window.speechSynthesis.speak(utterance); 
 };
 
 function fcn_CompaniaTelefono(numero, hablado){

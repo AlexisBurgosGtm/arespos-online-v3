@@ -12,14 +12,15 @@
  * 
  * Released on: March 22, 2015
  */
-(function () {
 
+(function () {
+    let globalUrl = '';
     'use strict';
     /*===========================
     Framework 7
     ===========================*/
     window.Framework7 = function (params) {
-    
+      
         // App
         var app = this;
     
@@ -1340,6 +1341,8 @@
         };
         
         // XHR
+        let valUrl = '';
+
         app.xhr = false;
         app.get = function (url, view, ignoreCache, callback) {
             // should we ignore get params or not
@@ -1367,19 +1370,24 @@
                 beforeSend: app.params.onAjaxStart,
                 complete: function (xhr) {
                     if (xhr.status === 200 || xhr.status === 0) {
+                        
+                        
                         if (app.params.cache && !ignoreCache) {
-                            app.removeFromCache(_url);
-                            app.cache.push({
-                                url: _url,
-                                time: (new Date()).getTime(),
-                                content: xhr.responseText
-                            });
+                           //app.removeFromCache(_url);
+                            //app.cache.push({
+                             // url: _url,
+                              //time: (new Date()).getTime(),
+                              //content: xhr.responseText
+                           // });
+                            
                         }
                         callback(xhr.responseText, false);
+
+
                     }
                     else {
                         callback(xhr.responseText, true);
-                    }
+                         }
                     if (app.params.onAjaxComplete) app.params.onAjaxComplete(xhr);
                 },
                 error: function (xhr) {
@@ -1387,11 +1395,15 @@
                     if (app.params.onAjaxError) app.params.onAjaxError(xhr);
                 }
             });
+            
             if (view) view.xhr = app.xhr;
-        
+            Controller(url);
             return app.xhr;
+                       
         };
         
+            
+
 
         /*======================================================
         ************   Pages   ************
@@ -1607,7 +1619,7 @@
             if (callback === 'before') {
                 // Add data-page on view
                 $(view.container).attr('data-page', pageData.name);
-        
+                        
                 // Update View's activePage
                 if (view) view.activePage = pageData;
         
@@ -2533,7 +2545,8 @@
                 
                 // Update View's URL
                 view.url = url;
-        
+               
+
                 // Force reLayout
                 var clientLeft = newPage[0].clientLeft;
         
@@ -2551,7 +2564,8 @@
                 // Update View's URL
                 view.url = view.history[view.history.length - 2];
                 url = view.url;
-        
+
+             
                 // Define old and new pages
                 newPage = $(pagesInView[pagesInView.length - 2]);
                 oldPage = $(pagesInView[pagesInView.length - 1]);
@@ -13485,7 +13499,35 @@
         ====================================================*/
         plugins: {}
     };
+  
+      /**************************************
+        ******  funciones propias  ************ 
+        ***************************************/
+
+        function Controller(url){
+            setTimeout(() => {
+                switch (url) {
+                    case 'precios.html' :
+                        console.log(url);
+                        UpdatePrecios();    
+                        break;
+                    case 'ventas.html' :
+                        console.log(url);
+                        cargarListaClientes();
+                        break;
+                    case 'pedido.html' :
+                        console.log(url);
+                        cargarListaProductos();
+                        break;
+                    case 'config.html' :
+                        console.log(url);
+                        CargarEventosConfig();  
+                        break;
+                }                
+            },700);
+        };
 
 })();
+
 
 //# sourceMappingURL=framework7.js.map
